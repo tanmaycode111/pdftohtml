@@ -1,0 +1,15 @@
+<!-- editor/templates/editor/edit_pdf.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit PDF</title>
+</head>
+<body>
+    <h1>Edit the PDF content</h1>
+    <form method="POST" action="{% url 'save_edited_html' %}">
+        {% csrf_token %}
+        <textarea name="html_content" rows="20" cols="100">{{ html_content }}</textarea>
+        <button type="submit">Save and Download PDF</button>
+    </form>
+</body>
+</html>
